@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ChirpNet — Feed</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar-left">
+    <div class="wordmark">ChirpNet</div>
+    <a href="/feed.html" class="nav-link active" data-view="home">🏠 <span class="label">Home</span></a>
+    <a href="#" class="nav-link" data-view="explore">🧭 <span class="label">Explore</span></a>
+    <a href="#" class="nav-link" data-view="notifications">🔔 <span class="label">Notifications</span><span id="notif-badge" class="badge hidden">0</span></a>
+    <a href="#" id="my-profile-link" class="nav-link">👤 <span class="label">Profile</span></a>
+    <button class="compose-btn" id="focus-composer">✎ <span class="label">Chirp</span></button>
+
+    <div class="user-chip" style="margin-top:24px;">
+      <img id="chip-avatar" src="" alt="" />
+      <div class="names">
+        <strong id="chip-name"></strong>
+        <span id="chip-username"></span>
+      </div>
+      <button class="logout-btn" id="logout-btn">Log out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN COLUMN -->
+  <main class="main-col">
+
+    <!-- Composer -->
+    <div class="panel composer">
+      <textarea id="composer-text" maxlength="500" placeholder="What's chirping?"></textarea>
+      <div class="composer-footer">
+        <div class="vibe-picker" id="vibe-picker">
+          <button type="button" class="vibe-chip" data-vibe="excited">🎉 excited</button>
+          <button type="button" class="vibe-chip" data-vibe="thoughtful">💭 thoughtful</button>
+          <button type="button" class="vibe-chip" data-vibe="funny">😄 funny</button>
+          <button type="button" class="vibe-chip" data-vibe="curious">🔍 curious</button>
+          <button type="button" class="vibe-chip" data-vibe="grateful">🙏 grateful</button>
+        </div>
+        <div class="composer-actions">
+          <span class="char-count" id="char-count">500</span>
+          <button class="post-btn" id="post-btn" disabled>Chirp</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feed tabs -->
+    <div class="panel feed-tabs">
+      <button class="feed-tab active" data-tab="feed">Following</button>
+      <button class="feed-tab" data-tab="explore">Explore</button>
+    </div>
+
+    <!-- Notifications panel (hidden by default) -->
+    <div class="panel hidden" id="notifications-panel"></div>
+
+    <!-- Posts list -->
+    <div id="posts-container"></div>
+
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar-right">
+    <div class="search-box">
+      🔍 <input type="text" id="search-input" placeholder="Search ChirpNet" />
+    </div>
+    <div class="panel side-panel hidden" id="search-results-panel"></div>
+
+    <div class="panel side-panel">
+      <h3>Trending vibes</h3>
+      <div id="trending-vibes"></div>
+    </div>
+
+    <div class="panel side-panel">
+      <h3>Who to follow</h3>
+      <div id="suggestions"></div>
+    </div>
+  </aside>
+
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/feed.js"></script>
+</body>
+</html>

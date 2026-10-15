@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ChirpNet — Profile</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar-left">
+    <div class="wordmark">ChirpNet</div>
+    <a href="/feed.html" class="nav-link">🏠 <span class="label">Home</span></a>
+    <a href="/feed.html" class="nav-link">🧭 <span class="label">Explore</span></a>
+    <a href="/feed.html" class="nav-link">🔔 <span class="label">Notifications</span></a>
+    <a href="#" class="nav-link active">👤 <span class="label">Profile</span></a>
+
+    <div class="user-chip" style="margin-top:24px;">
+      <img id="chip-avatar" src="" alt="" />
+      <div class="names">
+        <strong id="chip-name"></strong>
+        <span id="chip-username"></span>
+      </div>
+      <button class="logout-btn" id="logout-btn">Log out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN COLUMN -->
+  <main class="main-col">
+    <div class="panel profile-header" id="profile-header">
+      <div class="profile-cover"></div>
+      <div class="profile-info">Loading profile...</div>
+    </div>
+
+    <div id="profile-posts"></div>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar-right">
+    <div class="panel side-panel">
+      <h3>Followers</h3>
+      <div id="followers-list"><p style="color:var(--ink-faint);font-size:0.85rem;">—</p></div>
+    </div>
+    <div class="panel side-panel">
+      <h3>Following</h3>
+      <div id="following-list"><p style="color:var(--ink-faint);font-size:0.85rem;">—</p></div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Edit profile modal -->
+<div class="edit-modal-backdrop hidden" id="edit-modal-backdrop">
+  <div class="edit-modal">
+    <h3>Edit profile</h3>
+    <div class="field">
+      <label for="edit-fullname">Full name</label>
+      <input id="edit-fullname" type="text" />
+    </div>
+    <div class="field">
+      <label for="edit-avatar">Avatar image URL (optional)</label>
+      <input id="edit-avatar" type="text" placeholder="https://..." />
+    </div>
+    <div class="field">
+      <label for="edit-bio">Bio</label>
+      <textarea id="edit-bio" maxlength="280"></textarea>
+    </div>
+    <div class="edit-modal-actions">
+      <button class="btn-ghost" id="edit-cancel">Cancel</button>
+      <button class="btn-primary" id="edit-save" style="width:auto;">Save changes</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/profile.js"></script>
+</body>
+</html>

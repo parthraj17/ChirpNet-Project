@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ChirpNet — Your Space to Share & Connect</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <!-- Brand panel -->
+  <div class="auth-brand">
+    <div class="wordmark">ChirpNet</div>
+
+    <div>
+      <div class="tagline">Your space to share &amp; connect.</div>
+      <p class="sub">Post a chirp, tag it with a vibe, and follow the people whose voices you want in your feed. No noise — just the conversations you choose.</p>
+    </div>
+
+    <svg class="chirp-waves" width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 150 Q 20 120, 40 150 T 80 150 T 120 150" stroke="#EAF6F4" stroke-opacity="0.35" stroke-width="3" fill="none"/>
+      <path d="M40 180 Q 60 140, 80 180 T 160 180 T 240 180" stroke="#EAF6F4" stroke-opacity="0.25" stroke-width="4" fill="none"/>
+      <circle cx="270" cy="60" r="46" stroke="#EAF6F4" stroke-opacity="0.2" stroke-width="2" fill="none"/>
+      <circle cx="270" cy="60" r="70" stroke="#EAF6F4" stroke-opacity="0.12" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- Form panel -->
+  <div class="auth-panel">
+    <div class="auth-card">
+
+      <!-- LOGIN FORM -->
+      <div id="login-view">
+        <h2>Welcome back</h2>
+        <p class="sub-text">Log in to see what your circle is chirping about.</p>
+
+        <div id="login-error" class="form-error hidden"></div>
+
+        <form id="login-form">
+          <div class="field">
+            <label for="login-id">Email or username</label>
+            <input id="login-id" type="text" autocomplete="username" required />
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" autocomplete="current-password" required />
+          </div>
+          <button type="submit" class="btn-primary" id="login-submit">Log in</button>
+        </form>
+
+        <p class="switch-text">
+          New to ChirpNet? <button type="button" id="show-register">Create an account</button>
+        </p>
+      </div>
+
+      <!-- REGISTER FORM -->
+      <div id="register-view" class="hidden">
+        <h2>Join ChirpNet</h2>
+        <p class="sub-text">Create your account and send your first chirp.</p>
+
+        <div id="register-error" class="form-error hidden"></div>
+
+        <form id="register-form">
+          <div class="field">
+            <label for="reg-name">Full name</label>
+            <input id="reg-name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="reg-username">Username</label>
+            <input id="reg-username" type="text" pattern="[a-zA-Z0-9_]{3,20}" title="3-20 characters, letters/numbers/underscore only" required />
+          </div>
+          <div class="field">
+            <label for="reg-email">Email</label>
+            <input id="reg-email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="reg-password">Password</label>
+            <input id="reg-password" type="password" minlength="6" required />
+          </div>
+          <button type="submit" class="btn-primary" id="register-submit">Create account</button>
+        </form>
+
+        <p class="switch-text">
+          Already have an account? <button type="button" id="show-login">Log in</button>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
